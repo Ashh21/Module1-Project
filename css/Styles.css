@@ -1,25 +1,26 @@
 *{
     padding: 0;
     margin: 0;
-    box-sizing: border-box;
+    
 }
 
 body{
     background-color: #8cc461 ;
     font-size: 1rem;
-    min-height: 100vh;
 }
 
 .main{
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-    /* align-items: center; */
+    min-height: 100vh;
 }
 
 .name{
     padding-left: 1rem;
 }
+
+
 .output{
     display: flex;
     justify-content: space-between;
@@ -28,12 +29,15 @@ body{
     border-radius: 1rem;
 }
 
-.score-card{
+.score{
     display: flex;
     gap: 1rem;
 }
 
 .score-card-1{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
     background-color: #fff;
     height: 100px;
     width: 100px;
@@ -42,13 +46,19 @@ body{
     text-align: center;
 }
 
-
-.btn{
-    display: flex;
-    justify-content: space-evenly;
-    padding: 2rem;
+.score-card-1 > div {
+    font-size: x-large;
+    font-weight: 900;
 }
 
+.content{
+    display: flex;
+    justify-content:space-evenly;
+}
+
+.btn-div{
+    display: flex;
+}
 
 .btn-1{
     border-radius: 5rem;
@@ -76,28 +86,39 @@ body{
 }
 
 
-
 .popup{
-    float: right;
     border: 0.6rem solid white;
     border-radius: 1rem;
-    padding: 2rem 2rem 0 2rem;
+    padding: 2rem ;
+    margin-right: 2rem ;
     width: 350px;
-    height: 400px;
+    height: 300px;
     background-color: #004429;
+    left: 1;
 }
 
 .close-button{
-    float:right ;
     background-color: #FF0000;
     color: white;
     font-size: xx-large;
+    float: right;
+}
+
+.rules-button{
+  padding: 0.6rem 1.6rem;
+  border-radius: 0.6rem;
+  border: 2px solid white;
+  color: white;
+  background-color:#8cc461;
+  float: right;
+  margin-top: 2rem ;
 }
 
 .popup h2 {
     color: #fff;
     text-align: center;
 }
+
 
   ul li{
     margin: 1rem;
@@ -108,3 +129,4 @@ body{
 li span{
     color: white;
 }
+

@@ -23,21 +23,32 @@ buttons.forEach((button) => {
         (userChoice === "paper" && computerChoice === "rock") ||
         (userChoice === "scissors" && computerChoice === "paper")
       ) {
-        (result = "You Win Against PC!"), userScore++, computerScore--;
+        (result = "You Win Against PC!"), userScore++;
         localStorage.setItem("userScore", userScore);
         localStorage.setItem("computerScore", computerScore);
       } else {
-        (result = "You Lost Against PC!"), userScore--, computerScore++;
+        (result = "You Lost Against PC!"), computerScore++;
         localStorage.setItem("userScore", userScore);
         localStorage.setItem("computerScore", computerScore);
       }
   
-      document.getElementById("res").innerText = `You chose ${userChoice}. Computer chose ${computerChoice}`
+      // document.getElementById("res").innerText = `You chose ${userChoice}. Computer chose ${computerChoice}`
 
-        document.getElementById("result").innerHTML = `${result}`;
+        
+
+        document.getElementById("userScore").innerHTML = ` ${userScore}`;
+        document.getElementById("computerScore").innerHTML = ` ${computerScore}`;
       
     });
   });
+
+  const savedScore = localStorage.getItem("userScore" , "computerScore");
+  if (savedScore != null){
+    userScore = savedScore;
+    computerScore = savedScore;
+    document.getElementById("userScore").innerHTML = ` ${userScore}`;
+    document.getElementById("computerScore").innerHTML = ` ${computerScore}`;
+  }
 
 
   rulesButton.addEventListener("click", () => {
@@ -49,3 +60,31 @@ buttons.forEach((button) => {
   })
 
 
+
+const rock = document.getElementById("rock")
+const scissor = document.getElementById("scissor")
+const paper = document.getElementById("paper")
+
+rock.addEventListener("click", () => {
+  console.log("button clicked");
+if(result === "You Win Against PC!"){
+document.location.href = "Win.html";
+document.getElementById("result").innerText = `${result}`;
+} 
+})
+
+scissor.addEventListener("click", () => {
+  console.log("button clicked");
+if(result === "You Lost Against PC!"){
+document.location.href = "Lost.html";
+document.getElementById("result").innerText = `${result}`;
+} 
+})
+
+paper.addEventListener("click", () => {
+  console.log("button clicked");
+if(result === "Tie up!"){
+document.location.href = "Tied.html";
+document.getElementById("result").innerText = `${result}`;
+} 
+})
