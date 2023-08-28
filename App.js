@@ -34,22 +34,24 @@ buttons.forEach((button) => {
   
       // document.getElementById("res").innerText = `You chose ${userChoice}. Computer chose ${computerChoice}`
 
-        
-
         document.getElementById("userScore").innerHTML = ` ${userScore}`;
         document.getElementById("computerScore").innerHTML = ` ${computerScore}`;
       
     });
   });
 
-  const savedScore = localStorage.getItem("userScore" , "computerScore");
+  const savedScore = localStorage.getItem("userScore");
+  const savedScore1 = localStorage.getItem("computerScore")
   if (savedScore != null){
     userScore = savedScore;
-    computerScore = savedScore;
+    userScore = savedScore;
+    computerScore = savedScore1;
     document.getElementById("userScore").innerHTML = ` ${userScore}`;
     document.getElementById("computerScore").innerHTML = ` ${computerScore}`;
+
   }
 
+  rulesPopup.style.display = "none"
 
   rulesButton.addEventListener("click", () => {
     rulesPopup.style.display = "block";
@@ -61,30 +63,30 @@ buttons.forEach((button) => {
 
 
 
-const rock = document.getElementById("rock")
-const scissor = document.getElementById("scissor")
-const paper = document.getElementById("paper")
+// const rock = document.getElementById("rock")
+// const scissor = document.getElementById("scissor")
+// const paper = document.getElementById("paper")
 
-rock.addEventListener("click", () => {
-  console.log("button clicked");
-if(result === "You Win Against PC!"){
-document.location.href = "Win.html";
-document.getElementById("result").innerText = `${result}`;
-} 
-})
+// rock.addEventListener("click", () => {
+//   console.log("button clicked");
+// if(result === "You Win Against PC!"){
+// document.location.href = "Win.html";
+// document.getElementById("result").innerText = `${result}`;
+// } 
+// })
 
-scissor.addEventListener("click", () => {
-  console.log("button clicked");
-if(result === "You Lost Against PC!"){
-document.location.href = "Lost.html";
-document.getElementById("result").innerText = `${result}`;
-} 
-})
+// scissor.addEventListener("click", () => {
+//   console.log("button clicked");
+// if(result === "You Lost Against PC!"){
+// document.location.href = "Lost.html";
+// document.getElementById("result").innerText = `${result}`;
+// } 
+// })
 
-paper.addEventListener("click", () => {
-  console.log("button clicked");
-if(result === "Tie up!"){
-document.location.href = "Tied.html";
-document.getElementById("result").innerText = `${result}`;
-} 
-})
+// paper.addEventListener("click", () => {
+//   console.log("button clicked");
+// if(result === "Tie up!"){
+// document.location.href = "Tied.html";
+// document.getElementById("result").innerText = `${result}`;
+// } 
+// })
