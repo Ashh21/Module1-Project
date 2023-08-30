@@ -2,18 +2,23 @@ const choices = ["rock", "paper", "scissors"];
 const buttons = document.querySelectorAll(".choices");
 const rulesButton = document.getElementById("rules");
 const rulesPopup = document.getElementById("rules-popup"); 
-const closeButton = document.getElementById("close")
+const closeButton = document.getElementById("close");
 
-;let userScore = 0;
+
+let userScore = 0;
 let computerScore = 0;
 
+let compPicked = ""
+
+let result = ""
 
 buttons.forEach((button) => {
     button.addEventListener("click", () => {
       const userChoice = button.id;
       const computerChoice = choices[Math.floor(Math.random() * choices.length)];
-      let result = "";
-  
+      compPicked = computerChoice
+
+      console.log({userChoice,computerChoice})
       if (userChoice === computerChoice) {
         result = "Tie up!";
         localStorage.setItem("userScore", userScore);
@@ -31,8 +36,7 @@ buttons.forEach((button) => {
         localStorage.setItem("userScore", userScore);
         localStorage.setItem("computerScore", computerScore);
       }
-  
-      // document.getElementById("res").innerText = `You chose ${userChoice}. Computer chose ${computerChoice}`
+
 
         document.getElementById("userScore").innerHTML = ` ${userScore}`;
         document.getElementById("computerScore").innerHTML = ` ${computerScore}`;
@@ -41,14 +45,12 @@ buttons.forEach((button) => {
   });
 
   const savedScore = localStorage.getItem("userScore");
-  const savedScore1 = localStorage.getItem("computerScore")
+  const compScore = localStorage.getItem("computerScore")
   if (savedScore != null){
     userScore = savedScore;
-    userScore = savedScore;
-    computerScore = savedScore1;
+    computerScore = compScore;
     document.getElementById("userScore").innerHTML = ` ${userScore}`;
     document.getElementById("computerScore").innerHTML = ` ${computerScore}`;
-
   }
 
   rulesPopup.style.display = "none"
@@ -63,30 +65,66 @@ buttons.forEach((button) => {
 
 
 
-// const rock = document.getElementById("rock")
-// const scissor = document.getElementById("scissor")
-// const paper = document.getElementById("paper")
+const rock = document.getElementById("rock")
+const scissor = document.getElementById("scissors")
+const paper = document.getElementById("paper")
 
-// rock.addEventListener("click", () => {
-//   console.log("button clicked");
-// if(result === "You Win Against PC!"){
-// document.location.href = "Win.html";
-// document.getElementById("result").innerText = `${result}`;
-// } 
-// })
 
-// scissor.addEventListener("click", () => {
-//   console.log("button clicked");
-// if(result === "You Lost Against PC!"){
-// document.location.href = "Lost.html";
-// document.getElementById("result").innerText = `${result}`;
-// } 
-// })
 
-// paper.addEventListener("click", () => {
-//   console.log("button clicked");
-// if(result === "Tie up!"){
-// document.location.href = "Tied.html";
-// document.getElementById("result").innerText = `${result}`;
-// } 
-// })
+function handleChoiceClick(choice) {
+  const isWon = result === "You Win Against PC!";
+  const isDraw = result === "Tie up!";
+  const gameResult = isDraw ? "Tie up!" : isWon ? "You Win Against PC!" : "You Lost Against PC!";
+  const resultPage = isDraw ? "Tied.html" : isWon ? "Win.html" : "Lost.html";
+  window.location.href = `${resultPage}?choice=${choice}&gameResult=${gameResult}&compChoice=${compPicked}`;
+}
+
+rock.addEventListener("click", () => {
+  handleChoiceClick("rock");
+});
+
+scissor.addEventListener("click", () => {
+  handleChoiceClick("scissors");
+});
+
+paper.addEventListener("click", () => {
+  handleChoiceClick("paper");
+});
+
+ 
+rock.addEventListener("click", () => {
+  const isWon = result === "You Win Against PC!";
+  const isDraw = result === "Tie up!";
+  const gameResult = isDraw ? "Tie up!" : isWon ? "You Win Against PC!":"You Lost Against PC!";
+  const resultPage = isDraw ? "Tied.html" : isWon ? "Win.html":"Lost.html";
+  window.location.href = `${resultPage}?choice=rock&gameResult=${gameResult}&compChoice=${compPicked}`;
+})
+
+scissor.addEventListener("click", () => {
+  const isWon = result === "You Win Against PC!";
+  const isDraw = result === "Tie up!";
+  const gameResult = isDraw ? "Tie up!" : isWon ? "You Win Against PC!":"You Lost Against PC!";
+  const resultPage = isDraw ? "Tied.html" : isWon ? "Win.html":"Lost.html";
+  window.location.href = `${resultPage}?choice=scissors&gameResult=${gameResult}&compChoice=${compPicked}`;
+})
+
+paper.addEventListener("click", () => {
+  const isWon = result === "You Win Against PC!";
+  const isDraw = result === "Tie up!";
+  const gameResult = isDraw ? "Tie up!" : isWon ? "You Win Against PC!":"You Lost Against PC!";
+  const resultPage = isDraw ? "Tied.html" : isWon ? "Win.html":"Lost.html";
+  window.location.href = `${resultPage}?choice=paper&gameResult=${gameResult}&compChoice=${compPicked}`;
+})
+
+
+
+
+
+
+
+
+
+
+
+
+
