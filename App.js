@@ -49,7 +49,7 @@ buttons.forEach((button) => {
   if (savedScore != null){
     userScore = savedScore;
     computerScore = compScore;
-    document.getElementById("userScore").innerHTML = ` ${userScore}`;
+    document.getElementById("userScore").innerText = ` ${userScore}`;
     document.getElementById("computerScore").innerHTML = ` ${computerScore}`;
   }
 

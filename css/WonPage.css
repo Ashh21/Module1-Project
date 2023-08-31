@@ -7,8 +7,8 @@
 
 .main{
     display: flex;
+    flex-direction: column;
     justify-content: center;
-    align-items: center;
     min-height: 100vh;
     background-color: #8cc461;
     position: relative;
@@ -45,4 +45,61 @@
  h3 {
     font-size: 3.4rem;
     color: #fff;
+}
+
+.popup{
+    border: 0.6rem solid white;
+    border-radius: 1rem;
+    padding: 2rem ;
+    margin-right: 2rem ;
+    width: 350px;
+    height: 400px;
+    background-color: #004429;
+    float: right;
+}
+
+.close-button{
+    background-color: #FF0000;
+    color: white;
+    font-size: xx-large;
+    float: right;
+}
+
+.rules-btn > button{
+    padding: 0.6rem 1.6rem;
+    border-radius: 0.6rem;
+    border: 2px solid white;
+    color: white;
+    background-color:#8cc461;
+}
+
+.rules-btn{
+    display: flex;
+    justify-content: end;
+    gap: 1rem;
+}
+
+.popup h2 {
+    color: #fff;
+    text-align: center;
+}
+
+
+  ul li{
+    margin: 1rem;
+    list-style-type: square ;
+    color: #FFD600;
+ }   
+
+li span{
+    color: white;
+}
+
+.play-btn{
+    margin-top: 2rem;
+    padding: 0.6rem 1.6rem;
+    border-radius: 0.6rem;
+    border: 2px solid white;
+    color: white;
+    background-color:#8cc461;
 }

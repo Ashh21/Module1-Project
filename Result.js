@@ -42,7 +42,6 @@ const res = document.getElementById("result")
 
 let userScore = localStorage.getItem("userScore");
 let computerScore = localStorage.getItem("computerScore");
-console.log("userScore: " + userScore + " computerScore: "+computerScore)
 document.getElementById("userScore").innerHTML = ` ${userScore}`;
 document.getElementById("computerScore").innerHTML = ` ${computerScore}`;
 
