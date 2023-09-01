@@ -92,39 +92,3 @@ paper.addEventListener("click", () => {
 });
 
  
-rock.addEventListener("click", () => {
-  const isWon = result === "You Win Against PC!";
-  const isDraw = result === "Tie up!";
-  const gameResult = isDraw ? "Tie up!" : isWon ? "You Win Against PC!":"You Lost Against PC!";
-  const resultPage = isDraw ? "Tied.html" : isWon ? "Win.html":"Lost.html";
-  window.location.href = `${resultPage}?choice=rock&gameResult=${gameResult}&compChoice=${compPicked}`;
-})
-
-scissor.addEventListener("click", () => {
-  const isWon = result === "You Win Against PC!";
-  const isDraw = result === "Tie up!";
-  const gameResult = isDraw ? "Tie up!" : isWon ? "You Win Against PC!":"You Lost Against PC!";
-  const resultPage = isDraw ? "Tied.html" : isWon ? "Win.html":"Lost.html";
-  window.location.href = `${resultPage}?choice=scissors&gameResult=${gameResult}&compChoice=${compPicked}`;
-})
-
-paper.addEventListener("click", () => {
-  const isWon = result === "You Win Against PC!";
-  const isDraw = result === "Tie up!";
-  const gameResult = isDraw ? "Tie up!" : isWon ? "You Win Against PC!":"You Lost Against PC!";
-  const resultPage = isDraw ? "Tied.html" : isWon ? "Win.html":"Lost.html";
-  window.location.href = `${resultPage}?choice=paper&gameResult=${gameResult}&compChoice=${compPicked}`;
-})
-
-
-
-
-
-
-
-
-
-
-
-
-
