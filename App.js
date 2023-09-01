@@ -75,7 +75,7 @@ function handleChoiceClick(choice) {
   const isWon = result === "You Win Against PC!";
   const isDraw = result === "Tie up!";
   const gameResult = isDraw ? "Tie up!" : isWon ? "You Win Against PC!" : "You Lost Against PC!";
-  const resultPage = isDraw ? "Tied.html" : isWon ? "Win.html" : "Lost.html";
+  const resultPage = isDraw ? "/html/Tied.html" : isWon ? "/html/Win.html" : "/html/Lost.html";
   window.location.href = `${resultPage}?choice=${choice}&gameResult=${gameResult}&compChoice=${compPicked}`;
 }
 
