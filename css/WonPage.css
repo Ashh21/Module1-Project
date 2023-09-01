@@ -71,6 +71,7 @@
     border: 2px solid white;
     color: white;
     background-color:#8cc461;
+    font-size: 1rem;
 }
 
 .rules-btn{
@@ -100,6 +101,8 @@ li span{
     padding: 0.6rem 1.6rem;
     border-radius: 0.6rem;
     border: 2px solid white;
-    color: white;
-    background-color:#8cc461;
+    color: #6B6B6B;
+    background-color:#fff;
+    font-size: 1.2rem;
+    font-weight: 600;
 }
