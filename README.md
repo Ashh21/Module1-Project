@@ -1,3 +1,7 @@
 # Module1-Project
  
-Its a Rock, paper, scissor game build using Html, css and javascript.
+
+A rock-paper-scissor webapp build using html, css, js. 
+
+ 
+Live link : https://heartfelt-heliotrope-6a8fca.netlify.app/
